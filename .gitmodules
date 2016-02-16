@@ -1,0 +1,3 @@
+[submodule "hardware/atmega256rfr2"]
+	path = hardware/atmega256rfr2
+	url = git@github.com:maxmclau/boot-atmega256rfr2.git
