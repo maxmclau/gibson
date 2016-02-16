@@ -4,3 +4,6 @@
 [submodule "libraries/lwm"]
 	path = libraries/lwm
 	url = git@github.com:maxmclau/arduino-lwm.git
+[submodule "libraries/czar"]
+	path = libraries/czar
+	url = git@github.com:moa/lib-czar.git
