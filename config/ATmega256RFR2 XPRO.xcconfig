@@ -1,0 +1,29 @@
+// Board identifier
+// See Boards.txt for <tag>.name=Arduino Uno (16 MHz)
+//
+BOARD_TAG  = 256RFR2XPRO
+
+// For Arduino 1.5.x, if different from Arduino 1.0.x
+//
+BOARD_ARCHITECTURE = avr
+BOARD_NAME = atmega256rfr2
+
+
+SERIAL_BAUDRATE = 115200
+
+// Port (optionnal)
+// most common are /dev/tty.usbserial*, /dev/tty.usbmodem* or /dev/tty.uart*
+//
+BOARD_PORT = /dev/tty.usbmodem*
+
+// Specify the full path and name of the application
+// with /Contents/Resources/Java/** after
+//
+HEADER_SEARCH_PATHS = /Applications/Arduino.app/Contents/Resources/Java/** /Applications/Arduino.app/Contents/Java/**
+
+// Maximum RAM size in bytes
+// given by <tag>.upload.maximum_ram_size in boards.txt for Maple and Teensy
+// given by <tag>.upload.maximum_data_size in boards.txt for Arduino 1.5.x
+//
+MAX_RAM_SIZE = 8196
+
