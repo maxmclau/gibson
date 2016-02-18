@@ -1,9 +1,0 @@
-[submodule "hardware/atmega256rfr2"]
-	path = hardware/atmega256rfr2
-	url = git@github.com:maxmclau/boot-atmega256rfr2.git
-[submodule "libraries/lwm"]
-	path = libraries/lwm
-	url = git@github.com:maxmclau/arduino-lwm.git
-[submodule "libraries/czar"]
-	path = libraries/czar
-	url = git@github.com:moa/lib-czar.git
