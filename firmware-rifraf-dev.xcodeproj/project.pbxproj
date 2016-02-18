@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		991020CF1C74B26800BDB552 /* print.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = print.sh; sourceTree = "<group>"; };
+		991020CF1C74B26800BDB552 /* helpers.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = helpers.sh; sourceTree = "<group>"; };
+		991020D01C74FCF100BDB552 /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		991020D11C74FCF800BDB552 /* upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = upload.sh; sourceTree = "<group>"; };
+		991020D21C75432000BDB552 /* clean.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = clean.sh; sourceTree = "<group>"; };
 		99509E5A1C73EFAC003A9C39 /* ATmega256RFR2 XPRO.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "ATmega256RFR2 XPRO.xcconfig"; sourceTree = "<group>"; };
 		99509E5E1C73EFAC003A9C39 /* header.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header.png; sourceTree = "<group>"; };
 		99509E601C73EFAC003A9C39 /* boards.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = boards.txt; sourceTree = "<group>"; };
@@ -65,7 +68,7 @@
 		99509EA51C73EFAC003A9C39 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		99509EA61C73F03A003A9C39 /* Project Settings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project Settings.xcconfig"; sourceTree = "<group>"; };
 		99509EA71C73F6F3003A9C39 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		995E71381C740E4F00EFB8DD /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		995E71381C740E4F00EFB8DD /* make.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = make.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -295,8 +298,11 @@
 		99C48FE31C73BFF2002C24A1 = {
 			isa = PBXGroup;
 			children = (
-				991020CF1C74B26800BDB552 /* print.sh */,
-				995E71381C740E4F00EFB8DD /* build.sh */,
+				991020CF1C74B26800BDB552 /* helpers.sh */,
+				995E71381C740E4F00EFB8DD /* make.sh */,
+				991020D01C74FCF100BDB552 /* build.sh */,
+				991020D21C75432000BDB552 /* clean.sh */,
+				991020D11C74FCF800BDB552 /* upload.sh */,
 				99509EA71C73F6F3003A9C39 /* main.cpp */,
 				99509E591C73EFAC003A9C39 /* Configuration */,
 				99509E5B1C73EFAC003A9C39 /* Hardware */,

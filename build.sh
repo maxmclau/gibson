@@ -1,53 +1,56 @@
-#!/bin/sh
-#
-# Includes
-. print.sh
+build () {
+	cd $projectRootDir
 
-#
-# Parse arguments for script
-while echo $1 | grep -q ^-; do
-	eval $( echo $1 | sed 's/^--//' )=$2
-	shift
-	shift
-done
+	$arduinoBuilderPath										\
+	-logger=machine												\
+	-hardware	$projectHardwareDir					\
+	-hardware	$arduinoHardwareDir					\
+	-tools $arduinoBuilderTools						\
+	-tools $arduinoAvrTools								\
+	-libraries $arduinoLibrariesDir				\
+	-libraries $projectLibrariesDir				\
+	-build-path $projectBuildDir					\
+	-fqbn $boardQualifiedFullName					\
+	-warnings=all													\
+	-prefs=build.warn_data_percentage=75	\
+	$projectSketchPath										\
+	>$projectBuildDir/build.log &
 
-#
-# Assign directories
-# Project specific directories
-PROJECT_ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-PROJECT_BUILD_DIR=$PROJECT_ROOT_DIR/build
-PROJECT_HARDWARE_DIR=$PROJECT_ROOT_DIR/hardware
-PROJECT_LIBRARIES_DIR=$PROJECT_ROOT_DIR/libraries
+	#
+	# arduino-builder Process id
+	pid=$!
 
-#	Arduino specific directories
-ARDUINO_JAVA_DIR="/Applications/Arduino.app/Contents/Java"
-ARDUINO_HARDWARE_DIR=ARDUINO_JAVA_DIR/hardware
-ARDUINO_LIBRARIES_DIR=ARDUINO_JAVA_DIR/libraries
-ARDUINO_BUILDER_PATH=ARDUINO_JAVA_DIR/arduino-builder
-ARDUINO_BUILDER_TOOLS_DIR=ARDUINO_JAVA_DIR/tools-builder
-ARDUINO_AVR_TOOLS_DIR=ARDUINO_JAVA_DIR/hardware/tools/avr
+	while true ; do
+		if ps -p $pid > /dev/null ; then
+			_error=$((_error+1))
+		else
+			echo "exit" >> "$projectBuildDir/build.log"
+			break;
+		fi
 
-echo $host;
+		sleep 0.1
+	done &
 
-#
-# Board specific
-if [ -z "$board" ]
-then
-	echo "The variable MyVar has nothing in it."
-elif ! [ -z "$board-name" ]
-then
-	echo "The variable MyVar has something in it."
-fi
-
-#BOARD_QUALIFIED_FULL_NAME=$BOARD_NAME:$BOARD_ARCHITECTURE:$BOARD_TAG
-
-
-
-#
-# Check and create directories
-# Project build directory
-#printf "Text in ${red}red${end}, white and ${blu}blue${end}.${br}"
-#printf "$BOARD_QUALIFIED_FULL_NAME"
+	#
+	# Iterate through logfile
+	tail -n 0 -F $projectBuildDir/build.log | \
+	while read line ; do
+		if [ "$line" == "exit" ] ; then
+			# TODO : replace this super gangster killall function with something more pointed
+			killall tail
+			exit;
+		fi
 
 
-cd $PROJECT_DIR
+		# Return string with progress
+		# ===info ||| Progress {0} ||| [0.00]
+		local _progressRaw=$(echo "$line" | grep '===info ||| Progress')
+		#	Pull value between []
+		local _progress=$(echo $_progressRaw | cut -d "[" -f2 | cut -d "]" -f1)
+
+		if [ -n "$_progress" ] ; then
+			progressBar 32 $(printf "%.0f" $_progress) 100
+		fi
+	done
+
+}
