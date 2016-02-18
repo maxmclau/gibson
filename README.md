@@ -2,14 +2,14 @@
 
 Build tool for RifRaf's firmware and core files.
 
-### Install
+#### Install
 ```Shell
 git clone https://github.com/moa/rifraf-build.git
 cd rifraf-build
 ./build.sh --build -n atmega256rfr2 -a avr -t 256RFR2XPRO
 ```
 
-### Output
+#### Output
 
   ```
 ├── rifraf-build/
@@ -35,4 +35,4 @@ cd rifraf-build
 
 ### License
 
-Apache 2.0
+`Apache 2.0`
