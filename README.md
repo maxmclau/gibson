@@ -6,7 +6,7 @@ Build tool for RifRaf's firmware and core files.
 ```Shell
 git clone https://github.com/moa/rifraf-build.git
 cd rifraf-build
-./build.sh [--build|--upload|--serial] [-n|--name] atmega256rfr2 [-a|--arch] avr [-t|--tag] 256RFR2XPRO
+./build.sh [--build|--upload|--clean|--serial] [-n|--name] atmega256rfr2 [-a|--arch] avr [-t|--tag] 256RFR2XPRO
 ```
 
 ### Output
