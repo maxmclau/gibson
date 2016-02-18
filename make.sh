@@ -31,22 +31,18 @@ while [[ $# > 0 ]]
 			target="$1";
 		;;
 
-		-n|--board-name )
+		-n|--name )
 			boardName="$2"
 			shift ;;
 
-		-a|--board-arch )
+		-a|--arch )
 			boardArchitecture="$2"
 			shift ;;
 
-		-t|--board-tag )
+		-t|--tag )
 			boardTag="$2"
 			shift ;;
-
-		--default )
-			default=true
-			;;
-
+			
 		* )
 			echo "${red}WARN : Unknown argument :${end} $1"
 			exit;
