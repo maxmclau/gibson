@@ -1,0 +1,3 @@
+[submodule "libraries/czar"]
+	path = libraries/czar
+	url = git@github.com:moa/czar-lib.git
