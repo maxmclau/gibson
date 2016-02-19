@@ -6,6 +6,6 @@
 [subrepo]
 	remote = git@github.com:moa/czar-lib.git
 	branch = master
-	commit = 6a2b38ac69a49de10288d9f8010865d0cb8aa37c
-	parent = 0a8ed7a3eb0572b2fe557c380ee24490528e4636
+	commit = 296cde9c7d9bfa4a45171e0d465f8df9e29e7671
+	parent = f9b51039c8502b188eab8c26dcd34980e0560905
 	cmdver = 0.3.0
