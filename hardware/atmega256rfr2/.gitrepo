@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:maxmclau/atmega256rfr2.git
+	branch = master
+	commit = 99e9816c4b2c5b2509d5036eab0eb60e1c7e05b0
+	parent = 46a7c8705f339694457d4bb98e6d4b5e43aed382
+	cmdver = 0.3.0
