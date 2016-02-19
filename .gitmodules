@@ -1,9 +1,0 @@
-[submodule "libraries/czar"]
-	path = libraries/czar
-	url = git@github.com:moa/czar-lib.git
-[submodule "libraries/lwm"]
-	path = libraries/lwm
-	url = git@github.com:maxmclau/lwm.git
-[submodule "hardware/atmega256rfr2"]
-	path = hardware/atmega256rfr2
-	url = git@github.com:maxmclau/atmega256rfr2.git
