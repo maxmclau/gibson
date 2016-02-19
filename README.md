@@ -10,6 +10,12 @@ $ chmod 0755 ./build.sh
 $ ./build.sh --build -n atmega256rfr2 -a avr -t 256RFR2XPRO
 ```
 
+#### Subrepo
+Dependencies are managed by the awesome [`git-subrepo`](https://github.com/ingydotnet/git-subrepo) so none of the `git-submodule` drama is required while cloning. However you can pull the most recent commmit of a `git-subrepo` with
+```Shell
+$ git subrepo pull <subdir>|--all [-b <branch>] [-r <remote>] [-u]
+```
+
 #### Output
 
   ```
