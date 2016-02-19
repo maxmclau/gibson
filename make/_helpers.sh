@@ -168,8 +168,8 @@ printHeader () {
 		##3 Split string at delimiter
 		IFS=':' read -r -a _split <<< "$var"
 
-		local _title="${_split[0]}";
-		local _value="${_split[1]}";
+		local _title="${_split[0]}"
+		local _value="${_split[1]}"
 
 		_print -l " " -m blue
 		_print -l "$_title" -m blue -d suf -s $TITLE_WIDTH -i

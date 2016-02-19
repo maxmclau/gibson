@@ -5,6 +5,9 @@ export BOARD_NAME										= atmega256rfr2
 export BOARD_ARCHITECTURE						= avr
 export BOARD_TAG										= 256RFR2XPRO
 
+export AVRDUDE_PROGRAMMER						= stk600
+export AVRDUDE_PART									= m256rfr2
+
 SKETCH_PATH													= main.cpp
 
 #
