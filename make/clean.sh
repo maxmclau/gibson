@@ -1,7 +1,5 @@
-clean () {
-	if [ -d "$projectBuildDir" ] ; then
-		rm -r $projectBuildDir
-	fi
+if [ -d "$PROJECT_BUILD_DIR" ] ; then
+	rm -r $PROJECT_BUILD_DIR
+fi
 
-	mkdir $projectBuildDir
-}
+mkdir $PROJECT_BUILD_DIR
