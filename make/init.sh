@@ -3,7 +3,7 @@
 
 #
 # Includes
-. $PROJECT_MAKE_DIR/helpers.sh
+. $PROJECT_MAKE_DIR/_helpers.sh
 
 #
 # Display header
