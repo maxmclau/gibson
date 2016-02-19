@@ -1,0 +1,11 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:moa/czar-lib.git
+	branch = master
+	commit = 6a2b38ac69a49de10288d9f8010865d0cb8aa37c
+	parent = 0a8ed7a3eb0572b2fe557c380ee24490528e4636
+	cmdver = 0.3.0
