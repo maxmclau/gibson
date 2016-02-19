@@ -14,4 +14,4 @@ printHeader "Board Name:$BOARD_NAME"						\
 						"Arduino.app:$ARDUINO_JAVA_DIR"			\
 						"Build Tool:$ARDUINO_BUILDER_PATH"	\
 						"Sketch:$PROJECT_SKETCH_PATH"				\
-						"Build Path:$PROJECT_BUILD_DIR"\
+						"Build Path:$PROJECT_BUILD_DIR"

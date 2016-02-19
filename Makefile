@@ -29,14 +29,20 @@ export ARDUINO_AVR_TOOLS_DIR			 :=	$(ARDUINO_JAVA_DIR)/hardware/tools/avr
 ## Board specific
 export BOARD_QUALIFIED_FULL_NAME	 := $(BOARD_NAME):$(BOARD_ARCHITECTURE):$(BOARD_TAG)
 
-# Default to build target
+
+
+
 all: build
 
-build: init clean
+build: init
 	@sh $(PROJECT_MAKE_DIR)/build.sh
 
-clean: init
-	@sh $(PROJECT_MAKE_DIR)/clean.sh
+upload: init
+	@sh $(PROJECT_MAKE_DIR)upload.sh
 
-init:
+init: clean
+	@cd $(PWD)
 	@sh $(PROJECT_MAKE_DIR)/init.sh
+
+clean:
+	@sh $(PROJECT_MAKE_DIR)/clean.sh
