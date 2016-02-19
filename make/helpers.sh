@@ -19,10 +19,10 @@ let TITLE_WIDTH=26;
 # Text Reset
 RCol='\e[0m'
 
-# Line break
+## Line break
 BR=$'%s\n'
 
-# Regular           Bold                Underline           High Intensity      BoldHigh Intens     Background          High Intensity Backgrounds
+## Regular           Bold                Underline           High Intensity      BoldHigh Intens     Background          High Intensity Backgrounds
 Bla='\e[0;30m';     BBla='\e[1;30m';    UBla='\e[4;30m';    IBla='\e[0;90m';    BIBla='\e[1;90m';   On_Bla='\e[40m';    On_IBla='\e[0;100m';
 Red='\e[0;31m';     BRed='\e[1;31m';    URed='\e[4;31m';    IRed='\e[0;91m';    BIRed='\e[1;91m';   On_Red='\e[41m';    On_IRed='\e[0;101m';
 Gre='\e[0;32m';     BGre='\e[1;32m';    UGre='\e[4;32m';    IGre='\e[0;92m';    BIGre='\e[1;92m';   On_Gre='\e[42m';    On_IGre='\e[0;102m';
@@ -164,7 +164,7 @@ printHeader () {
 	for var in "$@" ; do
 		local _split
 
-		# Split string at delimiter
+		##3 Split string at delimiter
 		IFS=':' read -r -a _split <<< "$var"
 
 		local _title="${_split[0]}";
@@ -189,7 +189,7 @@ progressBar () {
 
 	let	__full=false;
 
-	# Calculate number of fill/empty slots in the bar
+	## Calculate number of fill/empty slots in the bar
 	progress=$(echo "$_width/$_total*$_complete" | bc -l)
 		fill=$(printf "%.0f\n" $progress)
 	if [ $fill -gt $_width ] ; then
@@ -197,7 +197,7 @@ progressBar () {
 	fi
 	empty=$(($fill-$_width))
 
-	# Percentage Calculation
+	## Percentage Calculation
 	percent=$(echo "100/$_total*$_complete" | bc -l)
 	percent=$(printf "%0.2f\n" $percent)
 
@@ -206,7 +206,7 @@ progressBar () {
 		__full=true;
 	fi
 
-	# Output to screen
+	## Output to screen
 	_print -l "\r [ " -m white
 	_print -l "%${fill}s" '' -m purple | tr ' ' ▉
 	_print -l "%${empty}s" '' -m purple | tr ' ' ░

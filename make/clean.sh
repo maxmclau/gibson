@@ -1,3 +1,7 @@
 clean () {
-	rm -r $projectBuildDir/*
+	if [ -d "$projectBuildDir" ] ; then
+		rm -r $projectBuildDir
+	fi
+
+	mkdir $projectBuildDir
 }

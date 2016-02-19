@@ -1,11 +1,12 @@
-# Miscellaneous
-# ----------------------------------
-# Manage path with space in the name
 #
+# Paths and Directories
+LOCAL_APPS_DIR							= /Applications
 
-PROJECT_HARDWARE_DIR				=	$(PROJECT_DIR)/hardware
-PROJECT_LIBRARIES_DIR				=	$(PROJECT_DIR)/libraries
+## Project specific
+PROJECT_HARDWARE_DIR				=	$(PWD)/hardware
+PROJECT_LIBRARIES_DIR				=	$(PWD)/libraries
 
+## Arduino specific
 ARDUINO_JAVA_DIR						=	$(LOCAL_APPS_DIR)/Arduino.app/Contents/Java
 ARDUINO_HARDWARE_DIR				= $(ARDUINO_JAVA_DIR)/hardware
 ARDUINO_LIBS_DIR						= $(ARDUINO_JAVA_DIR)/libraries
@@ -16,7 +17,7 @@ ARDUINO_AVR_TOOLS_DIR				=	$(ARDUINO_JAVA_DIR)/hardware/tools/avr
 BOARD_QUALIFIED_FULL_NAME		= $(BOARD_NAME):$(BOARD_ARCHITECTURE):$(BOARD_TAG)
 
 all:
-	@echo $(BOARD_QUALIFIED_FULL_NAME)
+	@echo $(PROJECT_HARDWARE_DIR)
 
 build:
-	./build
+#./build

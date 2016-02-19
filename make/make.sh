@@ -1,14 +1,7 @@
 #!/bin/sh
 #
 # Usage
-# ./build.sh --build -n atmega256rfr2 -a avr -t 256RFR2XPRO
-
-#
-# Includes
-. helpers.sh
-. build.sh
-. upload.sh
-. clean.sh
+# ./build.sh --build -r /Users/maxmillionmclaughlin/Moa/rifraf-build -n atmega256rfr2 -a avr -t 256RFR2XPRO
 
 #
 # Execution information
@@ -30,6 +23,10 @@ while [[ $# > 0 ]]
 		--build|--upload|--clean|--serial )
 			target="$1";
 		;;
+
+		-r|--root )
+			projectRootDir="$2"
+			shift ;;
 
 		-n|--name )
 			boardName="$2"
@@ -53,20 +50,27 @@ done
 
 #
 # Assign directories
-# Project specific directories
-projectRootDir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+## Project specific directories
+projectMakeDir=$projectRootDir/make
 projectSketchPath=$projectRootDir/main.cpp
 projectBuildDir=$projectRootDir/_build
 projectHardwareDir=$projectRootDir/hardware
 projectLibrariesDir=$projectRootDir/libraries
 
-#	Arduino specific directories
+##	Arduino specific directories
 arduinoJavaDir="/Applications/Arduino.app/Contents/Java"
 arduinoHardwareDir=$arduinoJavaDir/hardware
 arduinoLibrariesDir=$arduinoJavaDir/libraries
 arduinoBuilderTools=$arduinoJavaDir/tools-builder
 arduinoBuilderPath=$arduinoJavaDir/arduino-builder
 arduinoAvrTools=$arduinoJavaDir/hardware/tools/avr
+
+#
+# Includes
+. $projectMakeDir/helpers.sh
+. $projectMakeDir/build.sh
+. $projectMakeDir/upload.sh
+. $projectMakeDir/clean.sh
 
 #
 #	Construct board name
