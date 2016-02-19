@@ -43,7 +43,6 @@ Whi='\e[0;37m';     BWhi='\e[1;37m';    UWhi='\e[4;37m';    IWhi='\e[0;97m';    
 #	-d		:	Divider, yes or no
 #	-p		:	Prefix with class
 #	-s		:	Line size restraint
-#
 _print() {
 	local _string
 	local _line
@@ -88,6 +87,8 @@ _print() {
 						_modifier=${Cyn} ;;
 					"white" )
 						_modifier=${Whi} ;;
+					* )
+						_modifier=$2 ;;
 				esac
 				shift ;;
 
@@ -155,10 +156,10 @@ _print() {
 #
 # Print init ASCii
 printHeader () {
-	_print -l " _____ _____ _____ " -m purple -e -i
-	_print -l "|     |     |  _  |" -m purple -e -i
-	_print -l "| | | |  |  |     |" -m purple -e -i
-	_print -l "|_|_|_|_____|__|__|" -m purple -e -i
+	_print -l "  _____ _____ _____ " -m purple -e -i
+	_print -l " |     |     |  _  |" -m purple -e -i
+	_print -l " | | | |  |  |     |" -m purple -e -i
+	_print -l " |_|_|_|_____|__|__|" -m purple -e -i
 	_print --spacer
 
 	for var in "$@" ; do
@@ -170,12 +171,34 @@ printHeader () {
 		local _title="${_split[0]}";
 		local _value="${_split[1]}";
 
+		_print -l " " -m blue
 		_print -l "$_title" -m blue -d suf -s $TITLE_WIDTH -i
-		_print -l "$_value" -m yellow -e -i
+		_print -l "$_value" -m yellow -e
 	done
 
 	_print --spacer
 }
+
+printSpace () {
+	_print --spacer
+}
+
+#
+# Print success
+printSuccess () {
+	_print -l "✓" -m red
+	_print -l "Success" -m green -d suf -s $TITLE_WIDTH -i
+	_print -l "$1" -m white -e
+}
+
+#
+# Print error
+printError () {
+	_print -l "✗" -m red
+	_print -l "Error" -m red -d suf -s $TITLE_WIDTH -i
+	_print -l "$1" -m white -e
+}
+
 
 ####
 # PROGRESS BAR HELPER

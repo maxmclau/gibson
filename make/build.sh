@@ -35,21 +35,32 @@ done &
 # Iterate through logfile
 tail -n 0 -F $PROJECT_BUILD_DIR/build.log | \
 while read line ; do
-	if [ "$line" == "exit" ] ; then
-		# TODO : replace this super gangster killall function
-		#	with something more pointed
-		killall tail
-		exit
-	fi
-
-
-	# Return string with progress
-	# ===info ||| Progress {0} ||| [0.00]
+	## Return string with progress
+	## i.e, ===info ||| Progress {0} ||| [0.00]
 	_progressRaw=$(echo "$line" | grep '===info ||| Progress')
-	#	Pull value between []
+	##	Pull value between []
 	_progress=$(echo $_progressRaw | cut -d "[" -f2 | cut -d "]" -f1)
 
+	## Create progress bar with value
 	if [ -n "$_progress" ] ; then
-	progressBar 32 $(printf "%.0f" $_progress) 100
+		progressBar 32 $(printf "%.0f" $_progress) 100
+	fi
+
+	## TODO : replace this super gangster killall function
+	##	with something more pointed
+	if [ "$line" == "exit" ] ; then
+		if [ $(printf "%.0f" $_progress) -ge 100 ] ; then
+			printSpace
+			printSuccess "Heyo!"
+			printSuccess "Build Completed"
+		else
+			printSpace
+			printError "Something's wonky"
+			printError "Toolchain terminated before completion"
+		fi
+
+		##	Gross
+		killall tail
+		exit
 	fi
 done
