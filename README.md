@@ -1,6 +1,6 @@
-# RifRaf
+# Gibson
 
-Build tool for RifRaf's firmware and core files.
+Tool used to build all Moa projects
 
 #### Usage
 ```Shell
