@@ -171,7 +171,7 @@ printHeader () {
 		local _title="${_split[0]}"
 		local _value="${_split[1]}"
 
-		_print -l " " -m blue
+		_print -l "✓" -m blue
 		_print -l "$_title" -m blue -d suf -s $TITLE_WIDTH -i
 		_print -l "$_value" -m yellow -e
 	done
@@ -180,13 +180,15 @@ printHeader () {
 }
 
 printSpace () {
-	_print --spacer
+	for ((i = 1; i <= $1; i++)); do
+		_print --spacer
+	done
 }
 
 #
 # Print success
 printSuccess () {
-	_print -l "✓" -m red
+	_print -l "✓" -m green
 	_print -l "Success" -m green -d suf -s $TITLE_WIDTH -i
 	_print -l "$1" -m white -e
 }
@@ -230,10 +232,10 @@ progressBar () {
 	fi
 
 	## Output to screen
-	_print -l "\r [ " -m white
-	_print -l "%${fill}s" '' -m purple | tr ' ' ▉
-	_print -l "%${empty}s" '' -m purple | tr ' ' ░
-	_print -l " ] $percent%% \r" -m white
+	_print -l "\r  " -m white
+	_print -l "%${fill}s" '' -m purple | tr ' ' ✘
+	_print -l "%${empty}s" '' -m purple | tr ' ' ·
+	_print -l " $percent%% \r" -m green
 
 	if [ "$__full" == true ] ; then
 		_print --spacer

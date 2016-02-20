@@ -8,7 +8,7 @@ export BOARD_TAG										= 256RFR2XPRO
 export AVRDUDE_PROGRAMMER						= stk600
 export AVRDUDE_PART									= m256rfr2
 
-SKETCH_PATH													= main.cpp
+SKETCH_PATH													= main.ino
 
 #
 # Paths and Directories
