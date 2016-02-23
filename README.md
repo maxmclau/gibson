@@ -17,11 +17,11 @@ $ gibson --update
 $ gibson --build -n atmega256rfr2 -a avr -t 256RFR2XPRO -f main.cpp
 ```
 
-#### Subrepo
-Dependencies are managed by the awesome [`git-subrepo`](https://github.com/ingydotnet/git-subrepo) so none of the [`git-submodule`](http://somethingsinistral.net/blog/git-submodules-are-probably-not-the-answer/) drama is required while cloning. However you can pull the most recent commmit of a [`git-subrepo`](https://github.com/ingydotnet/git-subrepo) with...
-```Shell
-$ git subrepo pull <subdir>|--all [-b <branch>] [-r <remote>] [-u]
-```
+#### Success
+![Ayyyyy](https://raw.githubusercontent.com/moa/gibson/master/.gitassets/success.png)
+
+#### Error
+![Ayyyyy](https://raw.githubusercontent.com/moa/gibson/master/.gitassets/error.png)
 
 #### TODO
   + `Fix screenshot shadows`
@@ -30,13 +30,5 @@ $ git subrepo pull <subdir>|--all [-b <branch>] [-r <remote>] [-u]
   + `Compile less-gangster executable`
   + `Rewrite in Go`
 
-#### Success
-![Ayyyyy](https://raw.githubusercontent.com/moa/gibson/master/.gitassets/success.png)
-
-#### Error
-![Ayyyyy](https://raw.githubusercontent.com/moa/gibson/master/.gitassets/error.png)
-
-
 #### License
-
 **`Apache 2.0`**
