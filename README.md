@@ -30,13 +30,11 @@ $ git subrepo pull <subdir>|--all [-b <branch>] [-r <remote>] [-u]
   + `Compile less-gangster executable`
   + `Rewrite in Go`
 
-#### Output
-  ```
-├── rifraf-build/
-│   ├── index.md
-│   ├── en
-│   │   ├── 00_Getting_Started.md
-```
+#### Success
+![Ayyyyy](https://raw.githubusercontent.com/moa/gibson/master/.gitassets/success.png)
+
+#### Error
+![Ayyyyy](https://raw.githubusercontent.com/moa/gibson/master/.gitassets/error.png)
 
 
 #### License
