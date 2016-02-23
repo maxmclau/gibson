@@ -2,9 +2,19 @@
 
 Tool used to build all Moa projects
 
-#### Usage
+#### Installation
 ```Shell
-$ ...
+$ git clone git@github.com:moa/gibson.git
+$ cd gibson
+$ gibson --install
+```
+#### Update
+```Shell
+$ gibson --update
+```
+#### Build
+```Shell
+$ gibson --build -n atmega256rfr2 -a avr -t 256RFR2XPRO -f main.cpp
 ```
 
 #### Subrepo
@@ -13,8 +23,14 @@ Dependencies are managed by the awesome [`git-subrepo`](https://github.com/ingyd
 $ git subrepo pull <subdir>|--all [-b <branch>] [-r <remote>] [-u]
 ```
 
-#### Output
+#### TODO
+  + `Fix screenshot shadows`
+  + `Support .gibson build files`
+  + `Better error-handling`
+  + `Compile less-gangster executable`
+  + `Rewrite in Go`
 
+#### Output
   ```
 ├── rifraf-build/
 │   ├── index.md
