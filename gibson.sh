@@ -18,10 +18,10 @@
 # ./gibson.sh --build -n atmega256rfr2 -a avr -t 256RFR2XPRO -f main.cpp
 
 # Includes : All
-. inc/helpers.sh
-. inc/gui.sh
-. inc/build.sh
-. inc/clean.sh
+. /Users/maxmillionmclaughlin/Moa/gibson/inc/helpers.sh
+. /Users/maxmillionmclaughlin/Moa/gibson/inc/gui.sh
+. /Users/maxmillionmclaughlin/Moa/gibson/inc/build.sh
+. /Users/maxmillionmclaughlin/Moa/gibson/inc/clean.sh
 
 # Main : Arguments
 # Use > 1 to consume two arguments per pass in the loop (e.g. each
