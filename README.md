@@ -38,4 +38,4 @@ $ gibson --build -n atmega256rfr2 -a avr -t 256RFR2XPRO -f main.cpp
 
 #### License
 
-**`Apache 2.0`**
+[**`MIT`**](LICENSE)
